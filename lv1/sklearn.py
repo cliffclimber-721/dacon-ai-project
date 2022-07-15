@@ -1,9 +1,7 @@
 import pandas as pd
-import sklearn
-from sklearn.tree import DecisionTreeClassifier
+import graphviz
+from sklearn import *
 from sklearn.tree import DecisionTreeRegressor
-
-model = DecisionTreeRegressor()
 
 traindata = pd.read_csv("/Users/skywalker721/Desktop/dacon-ai-project/lv1/riding/train.csv")
 testdata = pd.read_csv("/Users/skywalker721/Desktop/dacon-ai-project/lv1/riding/test.csv")
@@ -11,5 +9,6 @@ testdata = pd.read_csv("/Users/skywalker721/Desktop/dacon-ai-project/lv1/riding/
 X_train = traindata.drop(['count'], axis=1)
 Y_train = traindata['count']
 
+model = DecisionTreeRegressor()
 model.fit(X_train, Y_train)
 
